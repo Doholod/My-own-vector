@@ -1,4 +1,5 @@
 #include "vector.h"
+#include <vector>
 using namespace my_lib;
 //Basic constructor	
 template<typename T>vector_yourself<T>::vector_yourself() {
@@ -23,10 +24,15 @@ template<typename T>vector_yourself<T>::vector_yourself(const vector_yourself& o
 		this->data[i] = other.data[i];
 	}
 }
-// Copy assignment operator
-
-template<typename T>
-vector_yourself<T>& operator= (const vector_yourself<T>& other1, const vector_yourself<T>& other2) {
-	if (this == &other2) return *this;
+// Copy assignment operatort
+template <typename T_T>void vector_yourself<T_T>::operator= (const vector_yourself<T_T>& other){
+	if (this != other) return;
 }
-
+//operator unequal
+template <typename T_T>bool vector_yourself<T_T>::operator!=(const vector_yourself<T_T>& other) {
+	if (this->data != other.data) return 1;
+	else return 0;דע
+//	if (mass != mass) {
+//		return 0;
+//	}
+//}

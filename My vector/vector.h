@@ -16,7 +16,8 @@ namespace my_lib {
 		//constructor copy
 		vector_yourself(const vector_yourself& other);
 		// Copy assignment operator
-		template <typename T>
-		vector_yourself& operator= (const vector_yourself<T>& other1);
+		void operator=(const vector_yourself<Type>& other1);
+		bool operator!=(const vector_yourself<Type>& other1);
 	};
+	 
 }
