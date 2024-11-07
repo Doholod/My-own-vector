@@ -25,14 +25,17 @@ template<typename T>vector_yourself<T>::vector_yourself(const vector_yourself& o
 	}
 }
 // Copy assignment operatort
-template <typename T_T>void vector_yourself<T_T>::operator= (const vector_yourself<T_T>& other){
-	if (this != other) return;
+template <typename Type>void vector_yourself<Type>::operator= (const vector_yourself<Type>& other){
+	if (!(*this != other)) return;
+	this->size = other.size;
+	delete this->data;
+	this->data = new Type(this->size);
+	for (size_t i = 0; i < this->size; ++i) {
+		this->data[i] = other.data[i];
+	}
 }
 //operator unequal
 template <typename T_T>bool vector_yourself<T_T>::operator!=(const vector_yourself<T_T>& other) {
 	if (this->data != other.data) return 1;
-	else return 0;דע
-//	if (mass != mass) {
-//		return 0;
-//	}
-//}
+	else return 0;
+}
