@@ -19,13 +19,14 @@ namespace my_lib {
 		vector_yourself(vector_yourself&& other);
 		
 		//Move assignment operator
-		vector_yourself& operator=(vector_yourself&& other)noexcept;
+		void operator=( vector_yourself&& other)noexcept;
 
 		// Copy assignment operator
 		void operator=(const vector_yourself<Type>& other1);
 		bool operator==(const vector_yourself<Type>& other1);
 		bool operator!=(const vector_yourself<Type>& other1);
-		bool operator*(const vector_yourself<Type>& other1);
+		//Repeat data number number of times
+		void operator*(size_t number);
 		void operator+ (const vector_yourself<Type>& other1);
 	private:
 		Type* data;
